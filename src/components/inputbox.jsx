@@ -35,7 +35,9 @@ function Inputbox({
          <select 
          className='rounded-lg px-1 bg-gray-100 cursor-pointer outline-none'
          value={selectedcurrency}
-         onChange={() => {oncurrencychange && oncurrencychange(e.target.value) }}
+         onChange={(f) => {
+          // e.preventDefault();
+          oncurrencychange && oncurrencychange(f.target.value) }}
          disabled={currencydisabled}
          >
             {currencyoptions.map((Currency) => (<option key={Currency} value={Currency}>{Currency}</option>))}
